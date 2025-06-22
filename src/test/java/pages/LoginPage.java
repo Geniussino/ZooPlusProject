@@ -50,7 +50,7 @@ public class LoginPage extends BasePage {
             elements.waitForElement(greetingText);
             return true;
         } catch (Exception e) {
-            System.out.println("Textul 'Salut Eugen' nu a fost găsit după login.");
+            System.out.println("Textul 'Salut Eugen' nu a fost gasit dupa login.");
             return false;
         }
     }

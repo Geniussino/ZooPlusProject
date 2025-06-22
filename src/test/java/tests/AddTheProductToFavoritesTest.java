@@ -1,13 +1,11 @@
 package tests;
 
-
 import helpers.CredentialsUtil;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductPage;
 import java.util.Properties;
-
 
 public class AddTheProductToFavoritesTest extends BaseTest {
     private Properties props;
@@ -26,6 +24,7 @@ public class AddTheProductToFavoritesTest extends BaseTest {
 
         loginPage.acceptCookies();
         loginPage.openLoginForm();
+
         loginPage.login(props.getProperty("zoo.email.valid"), props.getProperty("zoo.password.valid"));
         assert loginPage.isLoggedInSuccessfully();
 
@@ -35,7 +34,6 @@ public class AddTheProductToFavoritesTest extends BaseTest {
         assert productPage.isProductFavorited();
     }
 }
-
 
 
 

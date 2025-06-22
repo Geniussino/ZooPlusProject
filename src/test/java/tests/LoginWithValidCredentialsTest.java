@@ -11,7 +11,7 @@ import pages.LoginPage;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class LoginWithValidCredentialsTest {
+public class LoginWithValidCredentialsTest extends BaseTest {
     private WebDriver driver;
     private Properties props;
 

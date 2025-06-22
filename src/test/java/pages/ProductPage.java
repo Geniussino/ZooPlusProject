@@ -24,7 +24,7 @@ public class ProductPage {
         elements.clickElement(searchField);
         elements.fillElement(searchField, productName);
         elements.fillElement(searchField, Keys.ENTER);
-        elements.waitForElement(By.id("986105")); // așteaptă elementul target
+        elements.waitForElement(By.id("986105")); // așteapta elementul target
 
         WebElement productLink = driver.findElement(By.id("986105"));
         productLink.click();
