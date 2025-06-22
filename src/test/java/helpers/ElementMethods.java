@@ -91,4 +91,10 @@ public class ElementMethods {
             }
         }
     }
+
+    public String getErrorMessage() {
+        By errorLocator = By.cssSelector("[data-zta='alertText']");
+        WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+        return errorElement.getText();
+    }
 }
