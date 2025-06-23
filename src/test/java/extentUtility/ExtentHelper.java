@@ -47,7 +47,7 @@ public class ExtentHelper {
         extentReports = new ExtentReports();
         extentReports.attachReporter(extentSparkReporter);
         extentReports.setSystemInfo("Environment", "Staging");
-        extentReports.setSystemInfo("Tester", "Echipa QA Zooplus");
+        extentReports.setSystemInfo("Eugen", "Echipa QA Zooplus");
     }
 
     //Metoda care sa logheze informatia;

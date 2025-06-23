@@ -11,8 +11,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import java.lang.reflect.Method;
 
+import static extentUtility.ExtentHelper.finishTest;
+
 public class BaseTest {
     public WebDriver driver;
+    public String testName;
 
     @BeforeClass
     public void initiateReport() {
@@ -37,6 +40,7 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+        finishTest(testName);
     }
 
     @AfterClass
