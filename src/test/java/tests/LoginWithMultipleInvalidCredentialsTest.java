@@ -29,15 +29,15 @@ public class LoginWithMultipleInvalidCredentialsTest extends BaseTest {
             String username = entry.getKey();
             String password = entry.getValue();
 
-            ExtentHelper.logInfo(ReportEventType.INFO_STEP, "Se incearca autentificarea cu user: " + username);
+            ExtentHelper.logInfo(ReportEventType.INFO_STEP, "Attempting to log in with user: " + username);
             loginPage.openLoginForm();
             loginPage.login(username, password);
 
             String errorMessage = elementMethods.getErrorMessage();
             if (errorMessage != null && !errorMessage.isEmpty()) {
-                ExtentHelper.logInfo(ReportEventType.PASS_STEP, "Eroare captata corect: " + errorMessage);
+                ExtentHelper.logInfo(ReportEventType.PASS_STEP, "Error captured correctly: " + errorMessage);
             } else {
-                ExtentHelper.logFailScreenshot(driver, "Nu s-a gasit niciun mesaj de eroare pentru user: " + username);
+                ExtentHelper.logFailScreenshot(driver, "No error message found for user: " + username);
             }
 
             driver.get("https://www.zooplus.ro/");
