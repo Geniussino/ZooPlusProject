@@ -41,6 +41,7 @@ public class LoginWithMultipleInvalidCredentialsTest extends BaseTest {
             }
 
             driver.get("https://www.zooplus.ro/");
+            loginPage.waitForLoginIcon();
         }
     }
 

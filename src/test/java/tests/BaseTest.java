@@ -40,7 +40,7 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
-        finishTest(testName);
+        finishTest(result.getMethod().getMethodName());
     }
 
     @AfterClass

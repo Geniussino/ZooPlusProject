@@ -21,7 +21,6 @@ public class AddTheProductToFavoritesTest extends BaseTest {
 
     @Test
     public void addProductToFavorites() {
-        ExtentHelper.createTest("Add Product to Favorites Test");
         loginPage = new LoginPage(driver);
         productPage = new ProductPage(driver);
         loginPage.acceptCookies();
@@ -30,16 +29,10 @@ public class AddTheProductToFavoritesTest extends BaseTest {
         assert loginPage.isLoggedInSuccessfully();
 
         String productName = "Purizon Sterilised Adult Curcan cu pui - fără cereale";
-        ExtentHelper.logInfo(ReportEventType.INFO_STEP, "Searching and opening the product: " + productName);
+
         productPage.searchAndOpenProductByName(productName);
-        ExtentHelper.logInfo(ReportEventType.INFO_STEP, "Adding the product to Favorites");
         productPage.addToFavorites();
         assert productPage.isProductFavorited();
-        if (productPage.isProductFavorited()) {
-            ExtentHelper.logInfo(ReportEventType.PASS_STEP, "Product was successfully added to Favorites");
-        } else {
-            ExtentHelper.logFailScreenshot(driver, "Product was NOT added to Favorites");
-        }
     }
 }
 

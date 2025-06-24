@@ -2,10 +2,15 @@ package pages;
 
 import extentUtility.ExtentHelper;
 import extentUtility.ReportEventType;
+import helpers.ElementMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage {
     private final By acceptCookiesBtn = By.id("onetrust-accept-btn-handler");
@@ -78,5 +83,14 @@ public class LoginPage extends BasePage {
         ExtentHelper.logInfo(ReportEventType.INFO_STEP,
                 isAtPage ? "Successfully landed on logout feedback page" : "Not on the expected logout feedback page");
         return isAtPage;
+    }
+
+    public void waitForLoginIcon() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href='/account/overview']")));
+        } catch (TimeoutException e) {
+            ExtentHelper.logInfo(ReportEventType.INFO_STEP, "Login icon not found within 5 seconds, proceeding anyway.");
+        }
     }
 }
