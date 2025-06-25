@@ -12,20 +12,12 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class LoginWithValidCredentialsTest extends BaseTest {
-    private WebDriver driver;
     private Properties props;
 
     @BeforeClass
     public void loadCredentials() throws Exception {
         props = new Properties();
         props.load(new FileInputStream("src/test/resources/credentials.properties"));
-    }
-
-    @BeforeMethod
-    public void openHomePageAndMaximize() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.zooplus.ro/");
     }
 
     @Test

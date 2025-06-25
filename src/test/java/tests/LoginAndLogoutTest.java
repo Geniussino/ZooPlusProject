@@ -16,7 +16,6 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class LoginAndLogoutTest extends BaseTest {
-    private WebDriver driver;
     private Properties props;
 
 
@@ -24,12 +23,6 @@ public class LoginAndLogoutTest extends BaseTest {
 public void loadCredentials() throws Exception {
     props = new Properties();
     props.load(new FileInputStream("src/test/resources/credentials.properties"));
-    }
-
-    @BeforeMethod
-    public void openHomePageAndMaximize() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();driver.get("https://www.zooplus.ro/");
     }
 
     @Test
